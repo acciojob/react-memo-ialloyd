@@ -35,13 +35,14 @@ const App = () => {
         </div>
         <hr />
         <div>
-            <h1>memo</h1>
-            <input id='skill-input' value={skill} onChange={(event) => setCurrentSkill(event.target.value)} />
-            <button id='skill-btn' onClick={currentSkill}>Add Skill</button>
+            <h3>Memo</h3>
+            <input id="skill-input" onChange={e => setCurrentSkill(e.target.value)} value={skill} />
+            <button id="skill-btn" onClick={currentSkill}>Submit</button>
             <ul>
                 {
-
-                    skills.map(s => <li id={`item-jumbotron`}>{s}</li>)
+                    skills.map((s) => (
+                        <li id={`item-jumbotron`}>{s}</li>
+                    ))
                 }
             </ul>
         </div>
