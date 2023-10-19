@@ -31,7 +31,7 @@ const App = () => {
         <hr />
         <div>
             <span id='calc'>1000000000</span>
-            <button id='incr-cnt' onClick={() => setCount(count + 1)}>+ {count} </button>
+            <button id='incr-cnt incr-btn' onClick={() => setCount(count + 1)}>+ {count} </button>
         </div>
         <hr />
         <div>
@@ -41,7 +41,7 @@ const App = () => {
             <ul>
                 {
 
-                    skills.map(s => <li id='jumbotron'>{s}</li>)
+                    skills.map(s => <li id='item-jumbotron'>{s}</li>)
                 }
             </ul>
         </div>
