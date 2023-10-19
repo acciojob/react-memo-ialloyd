@@ -1,2 +1,41 @@
-<p>Now I can render any React component on any DOM node I want using ReactDOM.render</p>
+import React, { useState } from 'react';
 
+const App = () => {
+
+    const [todo, setTodo] = useState(['New Todo'])
+    const [count, setCount] = useState(0);
+    const [skills, setSkill] = useState(['html', 'css', 'js', 'react'])
+    const [skill, setCurrentSkill] = useState('');
+
+    return (<div>
+        <div>
+            <h1>My todos</h1>
+            {
+
+                todo.map(t => <><div>{t}</div><br /></>)
+
+            }
+            <button onClick={() => setTodo([...todo, 'New Todo'])}>Add Todo</button>
+        </div><br /><br />
+        <hr />
+        <div>
+            <span>Count: {count} </span>
+            <button onClick={() => setCount(count + 1)}>+</button>
+        </div>
+        <hr />
+        <div>
+            <h1>memo</h1>
+            <input onChange={(event) => setCurrentSkill(event.target.value)} />
+            <button onClick={() => setSkill([...skills, skill])}>Add Skill</button>
+            <ul>
+                {
+
+                    skills.map(s => <li>{s}</li>)
+                }
+            </ul>
+        </div>
+    </div>)
+
+}
+
+export default App;
