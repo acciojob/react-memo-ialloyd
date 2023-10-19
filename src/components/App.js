@@ -41,7 +41,7 @@ const App = () => {
             <ul>
                 {
                     skills.map((s) => (
-                        <li id={`${item-jumbotron}`}>{s}</li>
+                        <li id="item-jumbotron">{s}</li>
                     ))
                 }
             </ul>
