@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const App = () => {
 
@@ -6,6 +6,17 @@ const App = () => {
     const [count, setCount] = useState(0);
     const [skills, setSkill] = useState(['html', 'css', 'js', 'react'])
     const [skill, setCurrentSkill] = useState('');
+
+    const currentSkill = () => {
+
+        if (skill.length > 5) {
+
+            setSkill([...skills, skill])
+        }
+
+        setCurrentSkill('');
+
+    }
 
     return (<div id='main'>
         <div>
@@ -19,17 +30,18 @@ const App = () => {
         </div><br /><br />
         <hr />
         <div>
+            <span id='calc'>Count:</span>
             <button id='incr-cnt' onClick={() => setCount(count + 1)}>+ {count} </button>
         </div>
         <hr />
         <div>
             <h1>memo</h1>
-            <input id='skill-input' onChange={(event) => setCurrentSkill(event.target.value)} />
-            <button id='skill-btn' onClick={() => setSkill([...skills, skill])}>Add Skill</button>
+            <input id='skill-input' value={skill} onChange={(event) => setCurrentSkill(event.target.value)} />
+            <button id='skill-btn' onClick={currentSkill}>Add Skill</button>
             <ul>
                 {
 
-                    skills.map(s => <li>{s}</li>)
+                    skills.map(s => <li id='item-jumbotron'>{s}</li>)
                 }
             </ul>
         </div>
