@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 const App = () => {
 
     const [todo, setTodo] = useState(['New Todo'])
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(1000000000);
     const [skills, setSkill] = useState(['html', 'css', 'js', 'react'])
     const [skill, setCurrentSkill] = useState('');
 
@@ -30,8 +30,8 @@ const App = () => {
         </div><br /><br />
         <hr />
         <div id='incr-cnt'>
-            <span id='calc'>1000000000</span>
-            <button id='incr-btn' onClick={() => setCount(count + 1)}>+ {count} </button>
+            <span id='calc'>Count: {count} </span>
+            <button id='incr-btn' onClick={() => setCount(count + 1)}>+</button>
         </div>
         <hr />
         <div>
