@@ -7,7 +7,7 @@ const App = () => {
     const [skills, setSkill] = useState(['html', 'css', 'js', 'react'])
     const [skill, setCurrentSkill] = useState('');
 
-    return (<div>
+    return (<div id='main'>
         <div>
             <h1>My todos</h1>
             {
@@ -15,18 +15,18 @@ const App = () => {
                 todo.map(t => <><div>{t}</div><br /></>)
 
             }
-            <button onClick={() => setTodo([...todo, 'New Todo'])}>Add Todo</button>
+            <button id='add-todo-btn' onClick={() => setTodo([...todo, 'New Todo'])}>Add Todo</button>
         </div><br /><br />
         <hr />
         <div>
             <span>Count: {count} </span>
-            <button onClick={() => setCount(count + 1)}>+</button>
+            <button id='incr-cnt' onClick={() => setCount(count + 1)}>+</button>
         </div>
         <hr />
         <div>
             <h1>memo</h1>
-            <input onChange={(event) => setCurrentSkill(event.target.value)} />
-            <button onClick={() => setSkill([...skills, skill])}>Add Skill</button>
+            <input  id='skill-input' onChange={(event) => setCurrentSkill(event.target.value)} />
+            <button  onClick={() => setSkill([...skills, skill])}>Add Skill</button>
             <ul>
                 {
 
